@@ -1,7 +1,7 @@
 import Card from '../Components/Card';
 import { fakeRecipes } from '../Components/utils/fakeData';
 
-const Desayuno = () => {
+export const Desayuno = () => {
   return (
     <div className="category-recipes"> {/* Contenedor para las tarjetas */}
       {fakeRecipes.map((recipe, index) => (

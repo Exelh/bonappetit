@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Recomendados from '../Components/Recomendados';
 import SearchBar from '../Components/SearchBar';
 
-const Home = () => {
+export const Home = () => {
   const handleSearch = (term) => {
     console.log('Buscando recetas para:', term); // Aquí puedes implementar la lógica de búsqueda
   };
