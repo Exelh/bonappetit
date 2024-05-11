@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Mediatarde = () => {
+export const Mediatarde = () => {
   return (
     <div>
       <h2>Mediatarde</h2>

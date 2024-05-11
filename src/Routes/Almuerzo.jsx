@@ -1,10 +1,19 @@
-import React from 'react';
+import Card from "../Components/Card";
+import { fakeRecipes } from "../Components/utils/fakeData";
 
-const Almuerzo = () => {
+export const Almuerzo = () => {
   return (
     <div>
-      <h2>Almuerzo</h2>
-      <p>Bienvenido a la página de Almuerzo.</p>
+      <div className="category-recipes">
+        {fakeRecipes.map((recipe, index) => (
+          <Card 
+            key={index}
+            title={recipe.image}
+            image={recipe.image} 
+            description={recipe.description}
+          />
+        ))}
+      </div>
     </div>
   );
 };

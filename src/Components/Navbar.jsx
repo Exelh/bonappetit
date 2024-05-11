@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Navbar = () => {
@@ -10,7 +9,7 @@ const Navbar = () => {
         <h2 className="navbar-heading">BonAppetit</h2>
       </Link>
       <ul className='nav-list'>
-        <li className='nav-item'>Inicio</li>
+        <Link to="/"><li className='nav-item'>Inicio</li></Link> {/* Navega a Home */}
         <li className='nav-item'>Contacto</li>
         <li className='nav-item'>Sobre Nosotros</li>
       </ul>
