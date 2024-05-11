@@ -1,12 +1,12 @@
 import React from 'react';
-import Card from '../Components/Card';
+import CardRecetas from '../Components/Card';
 import { fakeRecipes } from '../Components/utils/fakeData';
 
 const Desayuno = () => {
   return (
     <div className="category-recipes"> {/* Contenedor para las tarjetas */}
       {fakeRecipes.map((recipe, index) => (
-        <Card
+        <CardRecetas
         //   key={index} // Clave única para cada tarjeta
           title={recipe.title} // Título de la receta
           image={recipe.image} // Imagen de la receta

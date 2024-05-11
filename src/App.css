@@ -198,7 +198,7 @@ footer {
 }
 
 .search-bar button {
-  background: rgb(160, 155, 155); /* Fondo transparente */
+  background: rgb(228, 226, 226); /* Fondo transparente */
   border: none; /* Sin borde */
   border-radius: 12px;
   margin-left: 10px; /* Espacio entre el input y el botón */
