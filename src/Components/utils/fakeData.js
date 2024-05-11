@@ -32,7 +32,7 @@ export const fakeRecipes = [
     {
       title: "Tortilla de avena y huevo",
       image: "../../../public/Images/desayuno-logo.png",
-      description: "Avena con banana, huevos y vainilla"
+      description: "Avena con banana, huevos y vainilla",
     },
   ];
   

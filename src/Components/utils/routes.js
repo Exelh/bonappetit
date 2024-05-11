@@ -3,5 +3,7 @@ export const routes = {
     desayuno: '/desayuno',
     almuerzo: '/almuerzo',
     mediatarde:'/mediatarde',
-    cena: '/cena'
+    cena: '/cena',
+    detail: '/recipe/:id',
+    detailTest: ''
 } 
