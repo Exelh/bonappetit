@@ -5,15 +5,20 @@ export const Mediatarde = () => {
   return (
     <div>
       <div className="category-recipes">
-        {fakeRecipes.map((recipe, index) => (
+      {fakeRecipes
+        .filter(recipe => recipe.categoria.includes("merienda")) 
+        .map((recipe, index) => (
           <Card 
             // key={index}
             title={recipe.nombre} // Título de la receta
             image={recipe.imagenes} // Imagen de la receta
             description={recipe.descripcion} // Descripción
+                 
           />
+          
         ))}
       </div>
+      
     </div>
   );
 };

@@ -24,7 +24,7 @@ export const fakeRecipes = [
     ingredientes: "",
     instrucciones: "",
     categoria: ["desayuno"],
-    imagenes: ["../../../public/Images/desayuno-logo.png"]
+    imagenes: ["../../../public/Images/desayuno-logo.png"],
   },
   {
     id: 4,
@@ -350,7 +350,7 @@ export const fakeRecipes = [
     ingredientes: "",
     instrucciones: "",
     categoria: ["cena"],
-    imagenes: []
+    imagenes: ["../../../public/Images/desayuno-logo.png"]
   },
   {
     id: 40,

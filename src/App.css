@@ -1,18 +1,32 @@
+*, *::after, *::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 #root {
 
   padding: 0.5rem;
   text-align: center;
 }
+
+content {
+  margin-top: 150px;
+}
 /*ESTILOS HEADER*/
 nav {
   width: 100%; /* El navbar ocupa el 100% del ancho de la página */
   display: flex;
-  position:sticky;
-  justify-content: space-between; /* Alinea elementos a la izquierda y derecha */
+  position:fixed;
+  top: 0;
+  justify-content: space-evenly; /* Alinea elementos a la izquierda y derecha */
   align-items: center; /* Centra verticalmente */
   padding: 15px 20px 10px 10px; /* Relleno */
   background-color: #f5f5f5; /* Color de fondo */
   z-index: 1000;
+  
+  
+  
 }
 
 .navbar-left {
@@ -100,8 +114,9 @@ footer {
 
 /****ESTILOS HOME*****/
 .home {
+  
   align-items: center;
-  margin-top: 20px;
+  margin-top: 60px;
   height: 100%;
   padding: 20px; /* Espacio interno */
 }
@@ -160,7 +175,9 @@ footer {
 }
 
 .category-recipes {
-  display: flex; /* Flexbox para distribuir tarjetas */
+  margin-top: 80px;
+  display: grid; /* Usar CSS Grid en lugar de Flexbox */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Distribuir automáticamente las tarjetas en columnas de al menos 250px de ancho */
   gap: 20px; /* Espacio entre tarjetas */
   padding: 20px; /* Espacio interno */
 }
@@ -168,11 +185,16 @@ footer {
 /*ESTILOS SECCION RECOMENDADOS*/
 
 .recommended-section {
-  display: flex; /* Flexbox para distribuir tarjetas */
- /* Permite ajustar las tarjetas */
+  
+  display: grid; /* Usar CSS Grid en lugar de Flexbox */
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Distribuir automáticamente las tarjetas en columnas de al menos 250px de ancho */
   gap: 20px; /* Espacio entre tarjetas */
   padding: 20px; /* Espacio interno para la sección */
 }
+.titulo-recomendados{
+  margin-top: 60px;
+}
+
 /*ESTILO BARRA BUSQUEDA*/
 
 .search-bar {

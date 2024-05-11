@@ -4,7 +4,9 @@ import { fakeRecipes } from '../Components/utils/fakeData';
 export const Desayuno = () => {
   return (
     <div className="category-recipes"> {/* Contenedor para las tarjetas */}
-      {fakeRecipes.map((recipe, index) => (
+      {fakeRecipes
+        .filter(recipe => recipe.categoria.includes("desayuno")) 
+        .map((recipe, index) => (
         <Card
           // key={index} // Clave única para cada tarjeta
           title={recipe.nombre} // Título de la receta

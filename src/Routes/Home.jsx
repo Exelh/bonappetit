@@ -28,7 +28,7 @@ export const Home = () => {
           </Link>
       </div>
       <div>
-          <h2>Productos Recomendados</h2>
+          
           <Recomendados/>
       </div>
     </div>

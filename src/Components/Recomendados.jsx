@@ -5,19 +5,24 @@ import Card from './Card'; // Componente para mostrar cada tarjeta
 
 const Recomendados = () => {
   // Obtén 3 productos aleatorios
-  const recommendedProducts = getRandomElements(fakeRecipes, 5);
+  const recommendedProducts = getRandomElements(fakeRecipes, 10);
 
   return (
-    <div className="recommended-section"> {/* Contenedor para la sección de recomendados */}
-      {recommendedProducts.map((product, index) => (
-        <Card
-          key={index} // Clave única para cada tarjeta
-          title={product.title} // Título del producto
-          image={product.image} // Imagen del producto
-          description={product.description} // Descripción
-        />
-      ))}
-    </div>
+    <>
+      <h2 className='titulo-recomendados'>Productos recomendados</h2>
+      <div className="recommended-section"> {/* Contenedor para la sección de recomendados */}
+      
+        {recommendedProducts.map((product, id) => (
+          
+          <Card
+            key={id} // Clave única para cada tarjeta
+            title={product.nombre} // Título del producto
+            image={product.imagenes} // Imagen del producto
+            description={product.descripcion} // Descripción
+          />
+        ))}
+      </div>
+    </>
   );
 };
 

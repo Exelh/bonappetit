@@ -12,6 +12,7 @@ const Navbar = () => {
         <Link to="/"><li className='nav-item'>Inicio</li></Link> {/* Navega a Home */}
         <li className='nav-item'>Contacto</li>
         <li className='nav-item'>Sobre Nosotros</li>
+        <li className='nav-item'>Rol Administrador</li>
       </ul>
       <div className="navbar-right">
         <button className="navbar-button">Crear Cuenta</button>

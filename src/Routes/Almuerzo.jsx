@@ -2,10 +2,12 @@ import Card from "../Components/Card";
 import { fakeRecipes } from "../Components/utils/fakeData";
 
 export const Almuerzo = () => {
-  return (
+    return (
     <div>
       <div className="category-recipes">
-        {fakeRecipes.map((recipe, index) => (
+      {fakeRecipes
+        .filter(recipe => recipe.categoria.includes("almuerzo")) 
+        .map((recipe, index) => (
           <Card 
             // key={index}
             title={recipe.nombre} // Título de la receta
