@@ -7,10 +7,10 @@ export const Almuerzo = () => {
       <div className="category-recipes">
         {fakeRecipes.map((recipe, index) => (
           <Card 
-            key={index}
-            title={recipe.image}
-            image={recipe.image} 
-            description={recipe.description}
+            // key={index}
+            title={recipe.nombre} // Título de la receta
+            image={recipe.imagenes} // Imagen de la receta
+            description={recipe.descripcion} // Descripción
           />
         ))}
       </div>
