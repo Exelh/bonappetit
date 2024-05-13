@@ -1,17 +1,21 @@
 import React from 'react'
-import { routes } from './utils/routes'
-import { Link } from 'react-router-dom'
 
-const Card = ({ title, image, description, key }) => {
+const Card = ({ title, image, description, category }) => {
+  const imageUrl = image.length > 0 ? image[0].urlImg : '';
+
+  // Verifica si category es un array antes de mapearlo
+  const categoryList = Array.isArray(category) ? category.map((cat) => (
+    <span key={cat.id} className="recipe-card-description">{cat.categorias}</span>
+  )) : null;
+
   return (
     <div className='recipe-card'>
-      <Link to={`${routes.detail}`}>
-        <img src={image} alt={title} className="recipe-card-image" /> {/* Imagen */}
-        <h3 className="recipe-card-title">{title}</h3> {/* Título */}
-        <p className="recipe-card-description">{description}</p> {/* Descripción */}
-      </Link>
+      <img src={imageUrl} alt={title} className="recipe-card-image" />
+      <h3 className="recipe-card-title">{title}</h3>
+      <p className="recipe-card-description">{description}</p>
+      {categoryList}
     </div>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;

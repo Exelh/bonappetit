@@ -1,38 +1,34 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import axios from "axios";
-import { reducer } from "./Reducers/reducer";
-import { fakeRecipes } from "./utils/fakeData";
+import { reducer } from "./Reducers/reducer"
 
-const ContextGlobal = createContext();
-const initialState = {theme: false, data: [], favs: [], recipeSelected: {}};
+const ContextGlobal = createContext()
+
+const initialState = {theme: false, 
+                        data: [], 
+                        favs: [], 
+                        recipeSelected: {}};
 
 
-export const ContextProvider = ({ children }) => {
+const ContextProvider = ({ children }) => {
+
     const [state, dispatch] = useReducer(reducer, initialState);
     //Petición a la API
-    // CAMBIAR LA URL CUANDO FUNCIONE
-    const url = [];
-    fakeRecipes.map((item, index) => {
-        url[index] = item;
-    })
-    /*
-    const url = `${fakeRecipes}`;
-    
+    const url = `http://localhost:8080/recetas/listar`
+
     useEffect(() => {
         axios(url)
-        .then(res => dispatch({type: 'GET_LIST', payload: res.data}))
-    }, []);*/
-    useEffect(() => {
-        
-        dispatch({type: 'GET_LIST', payload: url })
+        .then(res => {
+            dispatch({type: 'GET_LIST', payload: res.data})
+        })
     }, []);
     console.log(state);
     
-  return (
-    <ContextGlobal.Provider value={{}}>
+return (
+    <ContextGlobal.Provider value={{state,dispatch}}>
         { children }
     </ContextGlobal.Provider>
-  )
+)
 }
 
 export default ContextProvider

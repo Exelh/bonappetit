@@ -1,18 +1,24 @@
-import Card from "../Components/Card";
-import { fakeRecipes } from "../Components/utils/fakeData";
+import React from 'react';
+import { useContextGlobal } from '../Components/global.context'
+import Card from '../Components/Card';
 
-export const Almuerzo = () => {
-    return (
+const Almuerzo = () => {
+  const { state } = useContextGlobal();
+
+  const almuerzoRecipes = state.data.filter(recipe =>
+    recipe.categorias.some(category => category.categorias === 'Almuerzo')
+  );
+
+  return (
     <div>
       <div className="category-recipes">
-      {fakeRecipes
-        .filter(recipe => recipe.categoria.includes("almuerzo")) 
-        .map((recipe, index) => (
+        {almuerzoRecipes.map(recipe => (
           <Card 
-            // key={index}
-            title={recipe.nombre} // Título de la receta
-            image={recipe.imagenes} // Imagen de la receta
-            description={recipe.descripcion} // Descripción
+            key={recipe.id}
+            title={recipe.nombre}
+            image={recipe.imagenes}
+            description={recipe.descripcion}
+            category={recipe.categorias} // Pasa la prop 'category' al componente Card
           />
         ))}
       </div>

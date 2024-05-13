@@ -1,19 +1,26 @@
 import React from 'react';
 import { fakeRecipes } from '../Components/utils/fakeData';
 import Card from '../Components/Card';
+import { useContextGlobal } from '../Components/global.context'
+
 export const Cena = () => {
+  const { state } = useContextGlobal();
+
+  const cenaRecipes = state.data.filter(recipe =>
+    recipe.categorias.some(category => category.categorias === 'Cena')
+  );
+
   return (
     <div className="category-recipes"> {/* Contenedor para las tarjetas */}
-            {fakeRecipes
-        .filter(recipe => recipe.categoria.includes("cena")) 
-        .map((recipe, index) => (
-        <Card
-          // key={index} // Clave única para cada tarjeta
-          title={recipe.nombre} // Título de la receta
-          image={recipe.imagenes} // Imagen de la receta
-          description={recipe.descripcion} // Descripción
-        />
-      ))}
+        {cenaRecipes.map(recipe => (
+          <Card 
+            key={recipe.id}
+            title={recipe.nombre}
+            image={recipe.imagenes}
+            description={recipe.descripcion}
+            category={recipe.categorias} // Pasa la prop 'category' al componente Card
+          />
+        ))}
     </div>
   );
 };

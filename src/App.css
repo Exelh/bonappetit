@@ -184,6 +184,12 @@ footer {
 
 /*ESTILOS SECCION RECOMENDADOS*/
 
+.recommended-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Cinco columnas */
+  gap: 20px; /* Espacio entre tarjetas */
+}
+
 .recommended-section {
   
   display: grid; /* Usar CSS Grid en lugar de Flexbox */
